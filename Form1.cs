@@ -70,7 +70,9 @@ namespace FileWatcher
         }
         private void fsw_Change(object sender, FileSystemEventArgs e)
         {
+            fsw.EnableRaisingEvents = false;
             MessageBox.Show(e.Name + "  " + e.ChangeType + "  " + e.FullPath);
+            fsw.EnableRaisingEvents = true;
         }
     }
 }
